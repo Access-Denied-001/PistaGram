@@ -25,7 +25,7 @@ const options = {
         new LokiTransport({
             host: "http://192.168.0.109:3100",
             labels: { app: "pistagram" },
-            onConnectionError: (err) => {
+            onConnectionError: (error) => {
                 console.log(
                     `Connection to loki logger broke due to ${error.name} because of ${error.message}`
                 );
@@ -47,8 +47,13 @@ const totalRequestCounter = new client.Counter({
 });
 
 const totalSuccessfullResponseCounter = new client.Counter({
-    name: "successfull_response",
-    help: "Counts total successfull response given by the server",
+    name: "total_successfull_response",
+    help: "Counts total successfull responses given by the server",
+});
+
+const totalErrorResponseCounter = new client.Counter({
+    name: "total_error_response",
+    help: "Counts total error responses given by the server",
 });
 
 const requestResponseTime = new client.Histogram({
@@ -72,7 +77,13 @@ app.use(
                 status_code: res.statusCode,
             })
             .observe(time);
-        totalSuccessfullResponseCounter.inc();
+
+        const statusCode = res.statusCode.toString();
+        if (statusCode?.startsWith("2")) {
+            totalSuccessfullResponseCounter.inc();
+        } else {
+            totalErrorResponseCounter.inc();
+        }
     })
 );
 

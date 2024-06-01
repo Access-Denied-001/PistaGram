@@ -96,7 +96,7 @@ const MessageBody = () => {
             >
                 {loading ? (
                     <span className="loading loading-spinner"></span>
-                ) : category === "friends" ? (
+                ) : selectedRoom?.status === "friends" ? (
                     messages?.map((message) => (
                         <div key={message._id} ref={lastMessage}>
                             <Message
@@ -121,8 +121,8 @@ const MessageBody = () => {
                         </svg>
                         <p>
                             {selectedRoom.status === "pending"
-                                ? `Please accept the friend request from ${selectedRoom.username} to start a conversation!`
-                                : `Please send a friend request to ${selectedRoom.username} and wait for approval to start a conversation!`}
+                                ? `Please accept the friend request from ${selectedRoom?.username} to start a conversation!`
+                                : `Please send a friend request to ${selectedRoom?.username} and wait for approval to start a conversation!`}
                         </p>
                     </div>
                 )}

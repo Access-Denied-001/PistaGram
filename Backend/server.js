@@ -23,7 +23,7 @@ const options = {
     },
     transports: [
         new LokiTransport({
-            host: "http://192.168.0.109:3100",
+            host: `http://${process.env.IP}:3100`,
             labels: { app: "pistagram" },
             onConnectionError: (error) => {
                 console.log(

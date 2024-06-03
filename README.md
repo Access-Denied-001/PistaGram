@@ -31,10 +31,11 @@ To run PistaGram locally, follow these steps:
 
 
 # Usage
-Open your browser and navigate to http://localhost:3000 (or the port specified in your Vite configuration).
-Sign up for a new account or log in with an existing one.
-Explore the discover section to add friends.
-Start chatting in real-time!
+- Open your browser and navigate to http://localhost:8000 (or the port specified in your Vite configuration).
+- Sign up for a new account or log in with an existing one.
+- Explore the discover section to add friends.
+- Start chatting in real-time!
+- To visualize on grafana dashboard, navigate to http://localhost:3000.
 
 # Contributing
 We welcome contributions to PistaGram! To contribute, please follow these steps:

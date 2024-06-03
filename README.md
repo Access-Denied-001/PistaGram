@@ -7,6 +7,14 @@ PistaGram is a real-time communication web application that allows users to add 
 - **Friend Management**: Discover and add friends from the discover section.
 - **Responsive Design**: Enjoy a seamless experience across various devices.
 
+# Architecture
+1. Server is running on port 8000(default). All the logs are send to loki logger in level basis through Loki transport layer.
+2. Loki Logger is running on port 3100.
+3. Prometheus is running on port 9090. It pulls metrics data from server every 2 seconds.
+4. Grafan is running on port 3000. It keeps on pulling metrics and logs from prometheus and loki respectively.
+         ![image](https://github.com/Access-Denied-001/PistaGram/assets/65714586/a2828ae1-4c52-48fe-a160-7fd949b14a4c)             
+
+
 # Tech Stack
 - Frontend:
   - React

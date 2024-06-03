@@ -33,10 +33,23 @@ To run PistaGram locally, follow these steps:
       git clone https://github.com/Access-Denied-001/PistaGram.git
       cd PistaGram
     ```
+  - **Environment Variables**
+    ```
+      PORT=8000 (default)
+      ENVIRONMENT=developement or production
+      MONGO_DB_USERNAME=<MONGODB_USERNAME>
+      MONGO_DB_PASSWORD=<MONOGODB_PASSWORD>
+      MONGO_DB_URI=<MONGODB_URI>
+      JWT_SECRET_KEY=<JWT_SECRET>
+      IP=<PRIVATE_IP_ADDRESS>
+    ```
   - **Docker Containers Initialization**
     - **Prometheus**
         ```
-          cd Prometheus
+         cd Prometheus
+        ```
+        Open the prometheuse-config.yml and change the targets according to your ip. For example, <YOUR_PRIVATE_IP>:8000
+        ```
           docker compose up
         ```
         **Output**
@@ -55,16 +68,7 @@ To run PistaGram locally, follow these steps:
       ```
       **Output**
       ![image](https://github.com/Access-Denied-001/PistaGram/assets/65714586/ab742781-c987-4a94-b5fb-cbd25984b8e6)
-  - **Environment Variables**
-    ```
-      PORT=8000 (default)
-      ENVIRONMENT=developement or production
-      MONGO_DB_USERNAME=<MONGODB_USERNAME>
-      MONGO_DB_PASSWORD=<MONOGODB_PASSWORD>
-      MONGO_DB_URI=<MONGODB_URI>
-      JWT_SECRET_KEY=<JWT_SECRET>
-      IP=<PRIVATE_IP_ADDRESS>
-    ```
+  
   - **Run the Application**
 
     - **Development**

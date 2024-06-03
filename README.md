@@ -21,69 +21,31 @@ PistaGram is a real-time communication web application that allows users to add 
 # Installation
 To run PistaGram locally, follow these steps:
 
-Prerequisites
-Ensure you have the following installed:
+- **Prerequisites**: Ensure you have the following installed:
 
-Node.js (v14.x or higher)
-npm (v6.x or higher)
-Clone the Repository
-bash
-Copy code
-git clone https://github.com/Access-Denied-001/PistaGram.git
-cd PistaGram
-Install Dependencies
-Navigate to the frontend and backend directories and install the required dependencies.
+  - Node.js (v20.x or higher)
+  - npm (v10.x or higher)
+  - docker (v26.x or higher)
 
-Backend
-bash
-Copy code
-cd backend
-npm install
-Frontend
-bash
-Copy code
-cd ../frontend
-npm install
-Configure Environment Variables
-Create a .env file in the backend directory and add the necessary environment variables. An example .env file might look like this:
+- **Steps**: 
 
-env
-Copy code
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-SOCKET_PORT=your_socket_port
-Run the Application
-Backend
-Start the backend server:
 
-bash
-Copy code
-cd backend
-npm start
-Frontend
-Start the frontend development server:
-
-bash
-Copy code
-cd ../frontend
-npm run dev
-Usage
+# Usage
 Open your browser and navigate to http://localhost:3000 (or the port specified in your Vite configuration).
 Sign up for a new account or log in with an existing one.
 Explore the discover section to add friends.
 Start chatting in real-time!
-Contributing
+
+# Contributing
 We welcome contributions to PistaGram! To contribute, please follow these steps:
 
-Fork the repository.
-Create a new branch (git checkout -b feature/YourFeature).
-Make your changes.
-Commit your changes (git commit -m 'Add your feature').
-Push to the branch (git push origin feature/YourFeature).
-Open a pull request.
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+1. Fork the repository.
+2. Create a new branch (git checkout -b feature/YourFeature).
+3. Make your changes.
+4. Commit your changes (git commit -m 'Add your feature').
+5. Push to the branch (git push origin feature/YourFeature).
+6. Open a pull request.
 
-Acknowledgements
+
+# Acknowledgements
 Thank you to all the contributors who have made this project possible.

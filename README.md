@@ -27,15 +27,71 @@ To run PistaGram locally, follow these steps:
   - npm (v10.x or higher)
   - docker (v26.x or higher)
 
-- **Steps**: 
+- **Steps**:
+  - **Clone the repository**
+    ```
+      git clone https://github.com/Access-Denied-001/PistaGram.git
+      cd PistaGram
+    ```
+  - **Docker Containers Initialization**
+    - **Prometheus**
+        ```
+          cd Prometheus
+          docker compose up
+        ```
+        **Output**
+          ![image](https://github.com/Access-Denied-001/PistaGram/assets/65714586/4551eb77-f851-4fc7-a9f1-3fdab142c170)
 
+    - **Loki**
+      ```
+        docker run -d --name=loki -p 3100:3100 grafana/loki
+      ```
+      **Output**
+        ![image](https://github.com/Access-Denied-001/PistaGram/assets/65714586/e0b5c508-6820-4ffe-98fd-1979ab2c5024)
+
+    - **Grafana**
+      ```
+        docker run -d -p 3000:3000 --name=grafana grafana/grafana-oss
+      ```
+      **Output**
+      ![image](https://github.com/Access-Denied-001/PistaGram/assets/65714586/ab742781-c987-4a94-b5fb-cbd25984b8e6)
+  - **Environment Variables**
+    ```
+      PORT=8000 (default)
+      ENVIRONMENT=developement or production
+      MONGO_DB_USERNAME=<MONGODB_USERNAME>
+      MONGO_DB_PASSWORD=<MONOGODB_PASSWORD>
+      MONGO_DB_URI=<MONGODB_URI>
+      JWT_SECRET_KEY=<JWT_SECRET>
+      IP=<PRIVATE_IP_ADDRESS>
+    ```
+  - **Run the Application**
+    **Development**
+      Backend-
+        ```
+        npm install
+        cd Backend
+        npm run dev
+        ```
+      Frontend-
+        ```
+        cd Frontend
+        npm install
+        npm run dev
+        ```
+    **Production**
+      ```
+        npm run build
+        npm run prod
+      ```
 
 # Usage
-- Open your browser and navigate to http://localhost:8000 (or the port specified in your Vite configuration).
+- Open your browser and navigate to http://localhost:8000(for production) and to http://localhot:5000(for development).
 - Sign up for a new account or log in with an existing one.
 - Explore the discover section to add friends.
 - Start chatting in real-time!
 - To visualize on grafana dashboard, navigate to http://localhost:3000.
+- To see prometheus metrics, navigate to http://localhost:9090/metrics and for grafana related things navigate to http://localhost:3100/metrics.
 
 # Contributing
 We welcome contributions to PistaGram! To contribute, please follow these steps:
@@ -46,7 +102,6 @@ We welcome contributions to PistaGram! To contribute, please follow these steps:
 4. Commit your changes (git commit -m 'Add your feature').
 5. Push to the branch (git push origin feature/YourFeature).
 6. Open a pull request.
-
 
 # Acknowledgements
 Thank you to all the contributors who have made this project possible.

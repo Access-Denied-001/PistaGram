@@ -66,7 +66,9 @@ To run PistaGram locally, follow these steps:
       IP=<PRIVATE_IP_ADDRESS>
     ```
   - **Run the Application**
-    **Development**
+
+    - **Development**
+
       Backend-
         ```
         npm install
@@ -79,7 +81,8 @@ To run PistaGram locally, follow these steps:
         npm install
         npm run dev
         ```
-    **Production**
+
+    - **Production**
       ```
         npm run build
         npm run prod
